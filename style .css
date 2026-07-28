@@ -1,0 +1,356 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+html, body{
+  width:100%;
+  overflow-x:hidden;
+}
+
+body{
+  color:#333;
+}
+
+.container{
+  width:90%;
+  max-width:1200px;
+  margin:auto;
+}
+
+header{
+  position:absolute;
+  width:100%;
+  z-index:10;
+  padding:10px 0;
+}
+
+.nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.logo{
+  height:160px;
+}
+
+.hero{
+  height:100vh;
+  background:url('img/hero.jpg');
+  background-size:cover;
+  background-position:center;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+}
+
+.overlay{
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,.45);
+}
+
+.hero-content{
+  position:relative;
+  z-index:2;
+  text-align:center;
+  color:white;
+  max-width:800px;
+  padding:20px;
+}
+
+.hero h1{
+  font-size:4rem;
+  margin-bottom:20px;
+}
+
+.hero p{
+  font-size:1.2rem;
+  line-height:1.8;
+}
+
+.hero-buttons{
+  margin-top:30px;
+  display:flex;
+  gap:15px;
+  justify-content:center;
+  flex-wrap:wrap;
+}
+
+.btn-primary{
+  background:#0B5B46;
+  color:white;
+  padding:15px 30px;
+  border-radius:8px;
+  text-decoration:none;
+}
+
+.btn-secondary{
+  background:#D9C8A3;
+  color:#0B5B46;
+  padding:15px 30px;
+  border-radius:8px;
+  text-decoration:none;
+}
+
+.btn-header{
+  background:white;
+  padding:12px 25px;
+  border-radius:8px;
+  text-decoration:none;
+  color:#0B5B46;
+  font-weight:600;
+}
+
+.beneficios{
+  padding:100px 20px;
+  background:#f8f8f8;
+}
+
+.beneficios h2{
+  text-align:center;
+  margin-bottom:50px;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:25px;
+}
+
+.card{
+  background:white;
+  padding:30px;
+  border-radius:15px;
+  box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.galeria{
+  padding:100px 20px;
+}
+
+.galeria h2{
+  text-align:center;
+  margin-bottom:50px;
+}
+
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:15px;
+}
+
+.gallery img{
+  width:100%;
+  height:300px;
+  object-fit:cover;
+  border-radius:12px;
+}
+
+.cta{
+  background:#0B5B46;
+  color:white;
+  padding:100px 20px;
+  text-align:center;
+}
+
+.cta h2{
+  margin-bottom:20px;
+}
+
+.cta p{
+  margin-bottom:30px;
+}
+
+footer{
+  background:#111;
+  color:white;
+  padding:70px 20px 0;
+}
+
+.footer-content{
+  max-width:1200px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:2fr 1fr 1fr;
+  gap:50px;
+  padding-bottom:50px;
+  border-bottom:1px solid rgba(255,255,255,.1);
+}
+
+.footer-col h4{
+  color:#D9C8A3;
+  font-size:1.1rem;
+  margin-bottom:20px;
+  font-weight:600;
+}
+
+.footer-col p{
+  color:rgba(255,255,255,.7);
+  line-height:1.7;
+  font-size:.95rem;
+}
+
+.footer-col ul{
+  list-style:none;
+}
+
+.footer-col ul li{
+  margin-bottom:12px;
+  color:rgba(255,255,255,.7);
+  font-size:.95rem;
+}
+
+.footer-col ul li a{
+  color:rgba(255,255,255,.7);
+  text-decoration:none;
+  transition:color .2s;
+}
+
+.footer-col ul li a:hover{
+  color:#D9C8A3;
+}
+
+.footer-brand .footer-logo{
+  height:70px;
+  margin-bottom:20px;
+}
+
+.footer-bottom{
+  max-width:1200px;
+  margin:0 auto;
+  padding:25px 0;
+  text-align:center;
+}
+
+.footer-bottom p{
+  color:rgba(255,255,255,.5);
+  font-size:.85rem;
+}
+
+.footer-logo{
+  height:140px;
+  margin-bottom:20px;
+}
+
+.whatsapp-float{
+  position:fixed;
+  right:25px;
+  bottom:25px;
+  width:70px;
+  height:70px;
+  z-index:999;
+}
+
+.whatsapp-float img{
+  width:100%;
+}
+
+.plano-container{
+  width:95%;
+  max-width:1400px;
+  margin:0 auto 40px;
+}
+
+.plano-container img{
+  width:100%;
+  border-radius:15px;
+  box-shadow:0 15px 40px rgba(0,0,0,.15);
+}
+
+.galeria-titulo{
+  text-align:center;
+  margin-bottom:40px;
+  margin-top:30px;
+}
+
+.plano-btn{
+  text-align:center;
+  margin-top:10px;
+  margin-bottom:60px;
+}
+
+/* ===== Responsive (tablet) ===== */
+@media(max-width:1024px){
+
+  .plano-container{
+    width:92%;
+  }
+
+}
+
+/* ===== Responsive (móvil) ===== */
+@media(max-width:768px){
+
+  .hero h1{
+    font-size:2.5rem;
+  }
+
+  .hero p{
+    font-size:1rem;
+  }
+
+  .logo{
+    height:95px;
+  }
+
+  .container{
+    width:92%;
+  }
+
+  .beneficios,
+  .galeria,
+  .cta{
+    padding:60px 20px;
+  }
+
+  /* Esto es lo que resuelve el "mapa muy grande" */
+  .plano-container{
+    width:100%;
+    padding:0 15px;
+    margin-bottom:30px;
+  }
+
+  .plano-container img{
+    max-height:280px;
+    object-fit:cover;
+  }
+
+  .gallery img{
+    height:220px;
+  }
+
+  .footer-content{
+    grid-template-columns:1fr;
+    gap:35px;
+    text-align:center;
+  }
+
+  .footer-col ul{
+    padding:0;
+  }
+
+  .whatsapp-float{
+    width:55px;
+    height:55px;
+    right:15px;
+    bottom:15px;
+  }
+
+}
+
+@media(max-width:480px){
+
+  .hero h1{
+    font-size:2rem;
+  }
+
+  .plano-container img{
+    max-height:200px;
+  }
+
+}
