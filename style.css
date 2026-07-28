@@ -35,6 +35,7 @@ header{
 
 .logo{
   height:160px;
+  width:auto;
 }
 
 .hero{
@@ -236,7 +237,9 @@ footer{
   }
 
   .logo{
-    height:95px;
+    height:180px;
+    widtg:auto;
+    margin-bottom:25px;
   }
 
   .container{
