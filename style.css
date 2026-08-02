@@ -349,15 +349,20 @@ footer{
 }
 
 .videos-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-    gap:30px;
+    display:flex;
+    gap:25px;
+    overflow-x:auto;
+    scroll-behavior:smooth;
+    padding:10px;
+
 }
 
 .videos-grid video{
-    width:100%;
+    min-width:400px;
+    max-width:400px;
     border-radius:15px;
     box-shadow:0 10px 30px rgba(0,0,0,.15);
+
 }
   @media (max-width: 768px){
 
@@ -372,4 +377,11 @@ footer{
         object-fit:contain;
     }
 
+}
+.videos-grid::-webkit-scrollbar{
+    display:none;
+}
+
+.videos-grid{
+    scrollbar-width:none;
 }
