@@ -385,3 +385,22 @@ footer{
 .videos-grid{
     scrollbar-width:none;
 }
+/* Videos en móvil */
+@media(max-width:768px){
+
+    .videos-grid{
+        display:flex;
+        flex-direction:column;
+        overflow-x:visible;
+        gap:20px;
+        padding:0;
+    }
+
+    .videos-grid video{
+        width:100%;
+        max-width:100%;
+        min-width:100%;
+        height:auto;
+    }
+
+}
