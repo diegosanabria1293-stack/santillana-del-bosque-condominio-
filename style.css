@@ -324,3 +324,30 @@ footer{
     gap:15px;
     flex-wrap:wrap;
 }
+.videos{
+    padding:100px 20px;
+    background:#ffffff;
+    text-align:center;
+}
+
+.videos h2{
+    color:#0B5B46;
+    margin-bottom:20px;
+}
+
+.videos-texto{
+    max-width:700px;
+    margin:0 auto 50px;
+}
+
+.videos-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:30px;
+}
+
+.videos-grid video{
+    width:100%;
+    border-radius:15px;
+    box-shadow:0 10px 30px rgba(0,0,0,.15);
+}
