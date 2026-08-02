@@ -199,9 +199,14 @@ footer{
 }
 
 .plano-container img{
-  width:100%;
-  border-radius:15px;
-  box-shadow:0 15px 40px rgba(0,0,0,.15);
+.plano-container img{
+    width:100%;
+    height:auto;
+    display:block;
+    object-fit:contain;
+    border-radius:15px;
+    box-shadow:0 15px 40px rgba(0,0,0,.15);
+
 }
 
 .galeria-titulo{
@@ -350,4 +355,18 @@ footer{
     width:100%;
     border-radius:15px;
     box-shadow:0 10px 30px rgba(0,0,0,.15);
+}
+  @media (max-width: 768px){
+
+    .plano-container{
+        width:100%;
+        padding:0 10px;
+    }
+
+    .plano-container img{
+        width:100%;
+        height:auto;
+        object-fit:contain;
+    }
+
 }
