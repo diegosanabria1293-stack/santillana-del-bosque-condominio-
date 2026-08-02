@@ -198,7 +198,7 @@ footer{
   margin:0 auto 40px;
 }
 
-.plano-container img{
+
 .plano-container img{
     width:100%;
     height:auto;
@@ -243,7 +243,7 @@ footer{
 
   .logo{
     height:180px;
-    widtg:auto;
+    width:auto;
     margin-bottom:25px;
   }
 
@@ -264,9 +264,12 @@ footer{
     margin-bottom:30px;
   }
 
-  .plano-container img{
-    max-height:280px;
-    object-fit:cover;
+ .plano-container img{
+    width:100%;
+    height:auto;
+    max-height:none;
+    object-fit:contain;
+}
   }
 
   .gallery img{
@@ -282,14 +285,13 @@ footer{
 
 }
 
-@media(max-width:480px){
+
 
   .hero h1{
     font-size:2rem;
   }
 
-  .plano-container img{
-    max-height:200px;
+
   }
 
 }
