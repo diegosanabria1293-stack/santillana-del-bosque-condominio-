@@ -20,6 +20,7 @@
     footer{padding:35px 0;background:var(--ink);color:#fff}.footer-top{display:flex;justify-content:space-between;align-items:center;padding-bottom:30px;border-bottom:1px solid #fff3}.footer-logo{width:150px;filter:brightness(1.3) saturate(.7);mix-blend-mode:screen}.phone{color:var(--gold);font-size:14px;font-weight:800}.footer-bottom{display:flex;justify-content:space-between;padding-top:20px;color:#fff7;font-size:9px;letter-spacing:.08em}.float{position:fixed;z-index:5;right:24px;bottom:24px;padding:14px 19px;border:1px solid #183c2d20;border-radius:999px;background:var(--gold);color:var(--ink);box-shadow:0 13px 30px #0f271d38;font-size:10px;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
     @media(max-width:850px){.wrap,.hero-content{width:min(calc(100% - 38px),650px)}.nav{height:72px}.brand img{width:135px}.menu{display:block}.links{position:absolute;top:71px;left:19px;right:19px;display:none;flex-direction:column;align-items:stretch;gap:0;padding:10px 20px;background:#0f2c21f7;border:1px solid #fff3}.links.open{display:flex}.links a{padding:14px 0;border-bottom:1px solid #fff2}.nav-cta{margin:10px 0 8px;text-align:center}.hero{min-height:760px}.hero-content{padding-bottom:120px}.intro-grid,.contact-grid,.amenity-layout,.plan-grid{grid-template-columns:1fr;gap:55px}.stats .wrap{grid-template-columns:1fr 1fr}.stat{min-height:140px}.features{grid-template-columns:1fr}.feature,.feature.small{min-height:380px}.feature-stack{grid-template-columns:1fr 1fr}.feature.small{min-height:240px}.section-head{display:block}.section-head .copy{margin-top:22px}.slider{grid-template-columns:1fr}.stage{min-height:0}.details{min-height:auto}.gallery-grid{grid-template-columns:1fr 1fr;grid-template-rows:290px 180px}.gallery-item:first-child{grid-column:1/3;grid-row:auto}.location{grid-template-columns:1fr}.location-image{min-height:330px;height:330px}.location-copy{padding:70px 30px}.footer-top,.footer-bottom{align-items:flex-start;flex-direction:column;gap:20px}}
     @media(max-width:490px){.wrap,.hero-content{width:calc(100% - 34px)}section{padding:90px 0}.hero h1{font-size:clamp(64px,17vw,102px)}.actions{align-items:stretch;flex-direction:column;gap:12px;max-width:270px}.hero-foot .wrap{flex-wrap:wrap;gap:8px}.quote{margin-left:15px;padding-left:27px}.feature-stack{grid-template-columns:1fr}.feature.small{min-height:260px}.amenity-list{grid-template-columns:1fr}.amenity:nth-child(odd){border-right:0;padding-right:0}.amenity:nth-child(even){padding-left:0}.gallery-grid{grid-template-columns:1fr;grid-template-rows:repeat(3,220px)}.gallery-item:first-child{grid-column:auto}.float{right:15px;bottom:15px;padding:13px 15px}.title{font-size:54px}}
+    .stage video{object-fit:contain;background:#102e24}.location-map{background:#c7c0af}.location-map iframe{display:block;width:100%;height:100%;min-height:550px;border:0}.location-copy>.primary{align-self:flex-start;margin-top:30px}@media(max-width:850px){.location-map iframe{min-height:330px;height:330px}}
   `;
 
   document.querySelector('link[href="style.css"]')?.remove();
@@ -52,6 +53,17 @@
     <a class="float" href="${wa('Hola, quiero información sobre Santilana del Bosque')}">◔ Escríbenos</a>
   `;
 
+  const videoDots = document.querySelector('.dots');
+  videoDots?.insertAdjacentHTML('beforeend', '<button data-video="2" aria-label="Video 3"></button>');
+  const locationMap = document.querySelector('.location-image');
+  if (locationMap) {
+    locationMap.classList.add('location-map');
+    locationMap.innerHTML = '<iframe src="https://maps.google.com/maps?q=5.901611,-73.645722&t=&z=15&ie=UTF8&iwloc=&output=embed" title="Ubicación de Santilana del Bosque" loading="lazy" allowfullscreen></iframe>';
+    document.querySelector('.location-copy')?.insertAdjacentHTML('beforeend', '<a class="primary" href="https://www.google.com/maps?q=5.901611,-73.645722" target="_blank" rel="noreferrer">Ver ubicación en Google Maps →</a>');
+  }
+  const badge = document.querySelector('.badge');
+  if (badge) badge.innerHTML = 'Video <span id="video-number">01</span> / 03';
+
   const menu = document.querySelector('.menu');
   const links = document.querySelector('.links');
   menu?.addEventListener('click', () => links?.classList.toggle('open'));
@@ -59,7 +71,8 @@
 
   const videos = [
     { src: 'videos/recorrido.mp4', title: 'Recorre Santilana del Bosque', text: 'Conoce los espacios, las casas y la atmósfera del proyecto.' },
-    { src: 'videos/drone.mp4', title: 'Mira el proyecto desde arriba', text: 'Descubre la extensión del condominio y su paisaje de montañas.' }
+    { src: 'videos/drone.mp4', title: 'Mira el proyecto desde arriba', text: 'Descubre la extensión del condominio y su paisaje de montañas.' },
+    { src: 'videos/amenidades.mp4', title: 'Conoce las amenidades', text: 'Descubre los espacios sociales y de bienestar del condominio.' }
   ];
   let active = 0;
   const video = document.querySelector('#project-video');
